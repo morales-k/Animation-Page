@@ -38,3 +38,15 @@ h1, h2, h3, h4, h5, p {
 a, a:visited, a:active {
   text-decoration: none;
 }
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"), url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Poppins-Bold";
+  src: local("Poppins"), url("../assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
