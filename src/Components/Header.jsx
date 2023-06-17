@@ -1,9 +1,8 @@
 import React from 'react';
-import Circle from './Circle';
 
 const Header = () => {
   return (
-    <div>
+    <div className="header">
       <h1>CSS Animations</h1>
       <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
@@ -11,7 +10,6 @@ const Header = () => {
       Venenatis lectus magna fringilla urna porttitor rhoncus dolor 
       purus non.
       </p>
-      <Circle />
     </div>
   )
 }

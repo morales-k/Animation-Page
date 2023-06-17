@@ -1,0 +1,14 @@
+@use "./circle.scss";
+@use "./header.scss";
+@use "./animation.scss";
+@import url("./boilerplate.css");
+
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
