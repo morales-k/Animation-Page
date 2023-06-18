@@ -1,13 +1,17 @@
 import React from 'react';
+import ghLogo from "../assets/images/github.svg";
 
 const Animation = () => {
   return (
     <div className="animation-container">
       <h1>Animation</h1>
       <div className="animation"></div>
-      <div className="button-container">
-        <button>Play</button>
-        <button>View Code</button>
+      <div className="btn-container">
+        <button className="btn" type="button">Play</button>
+        <a className="btn" href="#">
+          View Code
+          <img src={ghLogo} alt="View animation code on GitHub." />
+        </a>
       </div>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
