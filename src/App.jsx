@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './Components/Header';
-import Main from './Components/Main';
+import AnimationWrapper from './Components/AnimationWrapper';
 
 function App() {
 
   return (
     <div className="app">
       <Header />
-      <Main />
+      <AnimationWrapper />
     </div>
   )
 }

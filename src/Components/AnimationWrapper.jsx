@@ -1,12 +1,12 @@
 import React from 'react';
 import Animation from './Animation';
 
-const Main = () => {
+const AnimationWrapper = () => {
   return (
-    <div className="main">
+    <div className="animation-wrapper">
       <Animation />
     </div>
   )
 }
 
-export default Main;
+export default AnimationWrapper;
