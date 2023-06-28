@@ -1,8 +1,12 @@
 import React from 'react';
+import Circle from './Circle';
 
 const Header = () => {
   return (
     <div className="header">
+      <Circle size="xl" />
+      <Circle size="lg" />
+      <Circle size="sm" />
       <h1>CSS Animations</h1>
       <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
