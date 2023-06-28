@@ -1,34 +1,69 @@
 @use "./colors" as colors;
 
-@mixin make-circle($size, $color, $top, $left, $bottom, $right) {
+@mixin make-circle($size, $color, $top, $right, $bottom, $left) {
   width: $size;
   height: $size;
   position: absolute;
   top: $top;
-  left: $left;
-  bottom: $bottom;
   right: $right;
+  bottom: $bottom;
+  left: $left;
   border-radius: 50%;
   background-color: $color;
   margin: 2%;
+  z-index: -1;
 }
 
-div.circle:nth-of-type(1) {
-  @include make-circle(310px, colors.$blue, -12%, -8%, 0, 0);
+.circle-xl {
+  @include make-circle(12rem, colors.$blue, -110px, 0, 0, -110px);
 }
 
-// div.circle:nth-of-type(2) {
-//   @include make-circle(200px, $blue);
-// }
+.circle-lg {
+  @include make-circle(4.5rem, colors.$blue, 0, 0, 0, auto);
+}
 
-// div.circle:nth-of-type(3) {
-//   @include make-circle(120px, $blue);
-// }
+.circle-md {
+  @include make-circle(120px, colors.$blue, auto, 0, 5%, 4%);
+}
 
-// div.circle:nth-of-type(4) {
-//   @include make-circle(120px, $orange);
-// }
+.circle-md-alt {
+  @include make-circle(120px, colors.$orange, auto, 10%, -8%, auto);
+}
 
-// div.circle:nth-of-type(n+5) {
-//   @include make-circle(60px, $orange);
-// }
+.circle-sm {
+  @include make-circle(2rem, colors.$orange, 70px, 70px, 0, auto);
+}
+
+.circle-sm-alt {
+  @include make-circle(60px, colors.$orange, auto, 0, 0, 0);
+}
+
+/* Media Queries */
+
+@media (min-width: 600px) {
+  .circle-xl {
+    @include make-circle(14rem, colors.$blue, -110px, 0, 0, -110px);
+  }
+
+  .circle-lg {
+    @include make-circle(6rem, colors.$blue, 0, 0, 0, auto);
+  }
+
+  .circle-sm {
+    @include make-circle(2.5rem, colors.$orange, 80px, 90px, 0, auto);
+  }
+}
+
+@media (min-width: 1024px) {
+  .circle-xl {
+    @include make-circle(16rem, colors.$blue, -110px, 0, 0, -110px);
+  }
+
+  .circle-lg {
+    @include make-circle(8rem, colors.$blue, 0, 0, 0, auto);
+  }
+
+  .circle-sm {
+    @include make-circle(3rem, colors.$orange, 110px, 130px, 0, auto);
+  }
+}
