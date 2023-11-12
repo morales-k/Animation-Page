@@ -1,14 +1,10 @@
 @use "./circle.scss";
 @use "./header.scss";
+@use "./footer.scss";
 @use "./animation.scss";
 @import url("./boilerplate.css");
 
 .app {
   width: 100vw;
   height: 100%;
-}
-
-.animation-wrapper {
-  display: flex;
-  justify-content: center;
 }

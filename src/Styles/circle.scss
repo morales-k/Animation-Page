@@ -23,11 +23,15 @@
 }
 
 .circle-md {
-  @include make-circle(120px, colors.$blue, auto, 0, 5%, 4%);
+  @include make-circle(7.5rem, colors.$blue, auto, 0, -9%, 8%);
+  position: relative;
+  z-index: 0;
 }
 
 .circle-md-alt {
-  @include make-circle(120px, colors.$orange, auto, 10%, -8%, auto);
+  @include make-circle(7.5rem, colors.$orange, 9%, 0, 0, 85%);
+  position: relative;
+  z-index: 0;
 }
 
 .circle-sm {
@@ -35,35 +39,7 @@
 }
 
 .circle-sm-alt {
-  @include make-circle(60px, colors.$orange, auto, 0, 0, 0);
-}
-
-/* Media Queries */
-
-@media (min-width: 600px) {
-  .circle-xl {
-    @include make-circle(14rem, colors.$blue, -110px, 0, 0, -110px);
-  }
-
-  .circle-lg {
-    @include make-circle(6rem, colors.$blue, 0, 0, 0, auto);
-  }
-
-  .circle-sm {
-    @include make-circle(2.5rem, colors.$orange, 80px, 90px, 0, auto);
-  }
-}
-
-@media (min-width: 1024px) {
-  .circle-xl {
-    @include make-circle(16rem, colors.$blue, -110px, 0, 0, -110px);
-  }
-
-  .circle-lg {
-    @include make-circle(8rem, colors.$blue, 0, 0, 0, auto);
-  }
-
-  .circle-sm {
-    @include make-circle(3rem, colors.$orange, 110px, 130px, 0, auto);
-  }
+  @include make-circle(3.75rem, colors.$orange, 0, 0, 0, 0);
+  position: relative;
+  z-index: 0;
 }
