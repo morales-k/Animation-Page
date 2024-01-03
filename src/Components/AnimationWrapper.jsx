@@ -5,6 +5,16 @@ const AnimationWrapper = () => {
   return (
     <div className="animation-wrapper">
       <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
+      <Animation />
     </div>
   )
 }
