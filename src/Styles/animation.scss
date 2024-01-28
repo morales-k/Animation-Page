@@ -4,6 +4,10 @@
   --container-size: 320px;
 }
 
+.paused {
+  animation-play-state: paused !important;
+}
+
 .animation-wrapper {
   max-width: 1800px;
   margin: 0 auto;
@@ -13,13 +17,8 @@
   grid-gap: 80px;
   padding-top: 4em;
 
-  @media screen and (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0;
-  }
-
   @media screen and (min-width: 1440px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .animation-container {
@@ -28,10 +27,11 @@
 
     @media screen and (min-width: 768px) {
       padding: 2em 0;
+      --container-size: 420px;
     }
 
     @media screen and (min-width: 992px) {
-      --container-size: 420px;
+      --container-size: 520px;
     }
 
     h1 {
@@ -41,37 +41,12 @@
 
     .animation {
       height: var(--container-size);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: #EDF8FF;
       border: 2px solid colors.$gray;
       border-radius: 10px;
-    }
-
-    .btn-container {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .btn {
-      width: 25%;
-      height: 50px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      background-color: colors.$blue;
-      color: #FFFFFF;
-      border: 2px solid colors.$gray;
-      border-radius: 10px;
-      margin: 5% 0;
-      font-family: "Poppins-Bold";
-      font-size: 18px;
-      cursor: pointer;
-    }
-
-    a.btn {
-      width: 55%;
-      justify-content: space-between;
-      padding: 0 4%;
     }
   }
 }

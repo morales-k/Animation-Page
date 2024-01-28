@@ -1,20 +1,10 @@
 import React from 'react';
-import Animation from './Animation';
+import AnimationContainer from './AnimationContainer';
 
 const AnimationWrapper = () => {
   return (
     <div className="animation-wrapper">
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
-      <Animation />
+      <AnimationContainer />
     </div>
   )
 }
