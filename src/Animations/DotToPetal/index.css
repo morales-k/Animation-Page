@@ -1,0 +1,66 @@
+#dotContainer {
+  width: 110px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  animation: 6s rotate infinite;
+}
+
+.dot {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(18, 94, 129);
+  border-radius: 50%;
+  margin: 6px;
+  box-shadow: 0 0 0 0 rgb(27, 137, 188);
+}
+
+.dot:first-of-type {
+  background-color: #1d7aa5;
+  animation: 6s stretch ease-in-out infinite alternate-reverse;
+}
+
+.dot:nth-of-type(2) {
+  background-color: #3E5969;
+  animation: 6s stretch2 ease-in-out infinite alternate-reverse;
+}
+
+.dot:nth-of-type(3) {
+  background-color: #7a5498;
+  animation: 6s stretch2 ease-in-out infinite alternate-reverse;
+}
+
+.dot:last-of-type {
+  background-color: #CF5932;
+  animation: 6s stretch ease-in-out infinite alternate-reverse;
+}
+
+@keyframes rotate {
+ 0% {
+      transform: rotate(0deg);
+ }
+
+ 100% {
+      transform: rotate(360deg);
+ }
+}
+
+@keyframes stretch {
+  0% {
+       transform: skew(0, 0);
+  }
+
+  100% {
+       transform: skew(20deg, 20deg);
+  }
+}
+
+@keyframes stretch2 {
+  0% {
+      transform: skew(0, 0);
+  }
+
+ 100% {
+      transform: skew(-20deg, -20deg);
+  }
+}
