@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PlayPauseButton = (props) => {
-  const [paused, setPaused] = useState(false);
+  const [animation, setAnimation] = useState(null);
+  const [paused, setPaused] = useState(true);
   const { containerId } = props;
+  // const animation = document.querySelector(`#${containerId}`);
+
+  useEffect(() => {
+    if (animation === null) {
+      const animation = document.querySelector(`#${containerId}`);
+      setAnimation(animation);
+      detectAnimationPlayState(animation);
+    }
+  }, [containerId]);
+
+  // Set listener to detect animation play state.
+  const detectAnimationPlayState = (animation) => {
+    animation.addEventListener("animationend", () => {
+      togglePlayState(animation);
+    })
+  }
 
   // Toggles the pause class for a container and sub-children.
-  const togglePlayState = () => {
-    const animation = document.querySelector(`#${containerId}`);
+  const togglePlayState = (animation) => {
     const animationChildren = animation.children;
-    
     animation.classList.toggle('paused');
     
     // Check for children & grandchildren.
@@ -27,7 +42,7 @@ const PlayPauseButton = (props) => {
 
   return (
     <button 
-    onClick={() => togglePlayState()} 
+    onClick={() => togglePlayState(animation)} 
     className="btn" 
     type="button">{paused ? 'Play' : 'Pause'}</button>
   )
