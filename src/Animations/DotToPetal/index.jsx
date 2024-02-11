@@ -4,11 +4,11 @@ import './index.css';
 function DotToPetal() {
 
   return (
-    <div id="dotContainer">
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
+    <div id="dotContainer" className="paused">
+        <div className="dot paused"></div>
+        <div className="dot paused"></div>
+        <div className="dot paused"></div>
+        <div className="dot paused"></div>
     </div>
   )
 }

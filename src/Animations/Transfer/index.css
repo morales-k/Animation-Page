@@ -13,14 +13,19 @@
   --end-color: cyan;
 }
 
-body {
-  background-color: #0d1e28;
-}
-
 #dataContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: scale(0.5);
+
+  @media screen and (min-width: 768px) {
+    transform: scale(0.7);
+  }
+
+  @media screen and (min-width: 992px) {
+    transform: scale(0.8);
+  }
 }
 
 .flex-row {
@@ -146,21 +151,5 @@ body {
   100% {
     background-color: goldenrod;
     box-shadow: 0 0 3px 3px goldenrod;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  :root {
-    --circle-size: 160px;
-    --diamond-size: 30px;
-    --top-distance: 72.5px;
-  }
-}
-
-@media screen and (max-height: 650px) {
-  :root {
-    --circle-size: 160px;
-    --diamond-size: 30px;
-    --top-distance: 72.5px;
   }
 }

@@ -4,21 +4,21 @@ import './index.css';
 function Transfer() {
 
   return (
-    <div id="dataContainer">
-      <div className="flex-row">
-        <div className="diamond"></div>
-        <div className="diamond"></div>
-        <div className="diamond"></div>
+    <div id="dataContainer" className="paused">
+      <div className="flex-row paused">
+        <div className="diamond paused"></div>
+        <div className="diamond paused"></div>
+        <div className="diamond paused"></div>
       </div>
       
-       <div className="circle">
-        <div className="diamond"></div>
+       <div className="circle paused">
+        <div className="diamond paused"></div>
        </div>
        
-       <div className="flex-row">
-        <div className="diamond"></div>
-        <div className="diamond"></div>
-        <div className="diamond"></div>
+       <div className="flex-row paused">
+        <div className="diamond paused"></div>
+        <div className="diamond paused"></div>
+        <div className="diamond paused"></div>
       </div>
     </div>
   )
