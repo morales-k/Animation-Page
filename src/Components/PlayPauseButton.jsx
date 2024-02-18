@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 const PlayPauseButton = (props) => {
   const [animation, setAnimation] = useState(null);
   const [paused, setPaused] = useState(true);
-  const { containerId } = props;
-  // const animation = document.querySelector(`#${containerId}`);
+  let [animationCount, setAnimationCount] = useState(0);
+  const { containerId, length, setRefresh } = props;
 
   useEffect(() => {
     if (animation === null) {
@@ -17,8 +17,16 @@ const PlayPauseButton = (props) => {
   // Set listener to detect animation play state.
   const detectAnimationPlayState = (animation) => {
     animation.addEventListener("animationend", () => {
-      togglePlayState(animation);
-    })
+      setAnimationCount(animationCount += 1);
+
+      // Length is the number of sub-animations that a complete animation contains.
+      if (animationCount >= length) {
+        togglePlayState(animation);
+        setPaused(true);
+        setAnimationCount(0);
+        setRefresh(true);
+      }
+    });
   }
 
   // Toggles the pause class for a container and sub-children.
@@ -37,12 +45,16 @@ const PlayPauseButton = (props) => {
         }
       }
     }
+  };
+
+  const handlePlayPause = (animation) => {
+    togglePlayState(animation);
     setPaused(!paused);
   };
 
   return (
     <button 
-    onClick={() => togglePlayState(animation)} 
+    onClick={() => handlePlayPause(animation)} 
     className="btn" 
     type="button">{paused ? 'Play' : 'Pause'}</button>
   )
