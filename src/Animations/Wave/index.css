@@ -1,0 +1,28 @@
+#waveContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.wave {
+  display: block;
+  width: 10px;
+  height: 60px;
+  margin: 2px;
+  border-radius: 16px;
+  animation: 4s infinite wave;
+}
+
+@keyframes wave {
+  0% {
+      transform: scaleY(1);
+  }
+
+  50% {
+      transform: scaleY(2);
+  }
+
+  100% {
+      transform: scaleY(1);
+  }
+}
