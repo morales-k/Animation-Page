@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import './index.css';
 
 function Wave() {
@@ -6,14 +6,21 @@ function Wave() {
   const waveRef = useRef(null);
 
   useEffect(() => {
-    calculateTotalWaves();
-  }, []);
+    if (waveRef.current) {
+      calculateTotalWaves();
+    }
+  }, [waveRef]);
 
   useEffect(() => {
     if (totalWaves.length > 0) {
       addWaveStyles();
     }
   }, [totalWaves]);
+
+  useLayoutEffect(() => {
+      window.addEventListener('resize', calculateTotalWaves);
+      return () => window.removeEventListener('resize', calculateTotalWaves);
+  }, []);
 
   function calculateTotalWaves () {
     const animationWidth = waveRef.current.scrollWidth;
@@ -56,12 +63,16 @@ function Wave() {
   };
 
   return (
-    <div ref={waveRef} id="waveContainer" className="paused">
+    <div ref={waveRef} 
+         id="waveContainer" 
+         className="paused">
       {
         totalWaves && totalWaves.map((wave, index) => {
           return (
-              <span key={index} className="wave paused">
-              </span>
+            <span 
+              key={index} 
+              className={`wave ${waveRef.current.classList}`}>
+            </span>
           );
         })
       }
