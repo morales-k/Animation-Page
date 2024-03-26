@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
-import AnimationWrapper from './Components/AnimationWrapper';
+import AnimationList from "./Components/AnimationList";
 import Circle from './Components/Circle';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <AnimationWrapper />
+      <AnimationList />
       <Circle size="md" />
       <Circle size="md-alt" />
       <Circle size="sm-alt" />
