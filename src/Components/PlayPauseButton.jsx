@@ -10,16 +10,19 @@ const PlayPauseButton = (props) => {
     if (animation === null) {
       const animation = document.querySelector(`#${containerId}`);
       setAnimation(animation);
-      detectAnimationPlayState(animation);
+
+      if (!!length) {
+        detectAnimationPlayState(animation);
+      }
     }
   }, [containerId]);
 
-  // Set listener to detect animation play state.
+  // Add listener to increment animationCount when animationend event occurs.
   const detectAnimationPlayState = (animation) => {
     animation.addEventListener("animationend", () => {
       setAnimationCount(animationCount += 1);
 
-      // Length is the number of sub-animations that a complete animation contains.
+      // Length is the number of animationend events that should occur before an animation is considered complete.
       if (animationCount >= length) {
         togglePlayState(animation);
         setPaused(true);
